@@ -12,8 +12,8 @@ import threading
 import time
 import random 
 
-lock = threading.Lock()
-#sem = threading.Semaphore(1)
+# lock = threading.Lock()
+# sem = threading.Semaphore(1)
 N = 8
 
 def task(common, tid, turn):
@@ -22,6 +22,7 @@ def task(common, tid, turn):
          print(f"{tid}−{i}: Non−critical Section", flush=True)
          time.sleep(random.random()) # Para no entrar continuamente en la seccion critica 
          print(f"{tid}−{i}: End of non−critical Section", flush=True)
+         print("\n")
          ######## SECCION CRITICA ########
          sem.acquire()
          print(f"{tid}−{i}: Critical section", flush=True)
@@ -29,6 +30,7 @@ def task(common, tid, turn):
          print(f"{tid}−{i}: Inside critical section", flush=True)
          common.value = v
          print(f"{tid}−{i}: End of critical section", flush=True)
+         print("\n")
          turn.value = (tid + 1) % N
          sem.release()
      
