@@ -1,6 +1,7 @@
+-->
 # CritSectionSem
 Se deben hacer dos programas. Uno usando un Lock y el otro un BoundedSemaphore.
-
+--
 # CritSectionSem — Critical Section with Semaphore Use
 
 This project demonstrates a critical section problem using **multiple processes** (`multiprocessing`) and a shared counter. It intentionally shows why protecting a **read–modify–write** sequence requires a **cross-process** lock — and why a **threading** semaphore inside each process does **not** provide mutual exclusion across processes.
