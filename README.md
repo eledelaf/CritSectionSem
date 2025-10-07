@@ -13,8 +13,3 @@ Both programs spawn `N = 8` processes; each process performs 10 increments on a 
 ## Requirements
 - Python **3.8+**
 - Standard library only (`multiprocessing`, `time`, `random`)
-
-## How to run
-```bash
-python CritSectionLock.py
-python CritSectionBoundedSemaphore.py
